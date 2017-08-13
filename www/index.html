@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2016 Adobe Systems Incorporated. All rights reserved.
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+    <!-- Good default declaration:
+    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+    * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+        * Enable inline JS: add 'unsafe-inline' to default-src
+        * Enable eval(): add 'unsafe-eval' to default-src
+    * Create your own at http://cspisawesome.com
+    -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <script type="text/javascript" src="js/javascript.js"></script>
+        <script type="text/javascript" charset="utf-8">
+
+    // Call onDeviceReady when Cordova is loaded.
+    //
+    // At this point, the document has loaded but cordova-1.7.0.js has not.
+    // When Cordova is loaded and talking with the native device,
+    // it will call the event `deviceready`.
+    //
+    function onLoad() {
+        document.addEventListener("deviceready", onDeviceReady, false);
+		
+    }
+
+    // Cordova is loaded and it is now safe to make calls Cordova methods
+    //
+    function onDeviceReady() {
+		 document.addEventListener("backbutton", onBackKeyDown, false);
+		 myFunction();
+    }
+	
+	function onBackKeyDown() {
+		/*document.getElementById("Outer2").style.display = "block";
+		document.getElementById("Outer").style.display = "none";
+		document.getElementById("Outer4").style.display = "none";
+		document.getElementById("Outer3").style.display = "none";*/
+		document.getElementById("LogoBoxZindex").style.visibility = "visible";
+	/*	MSApp.terminateApp();
+		window.open("ms-windows-store://review/?ProductId=9mv4pl5bngs1", "_self");
+		alert('backbutton');*/
+    }
+	
+	function ConfirmExit() {
+		document.getElementById("Outer2").style.display = "block"
+		document.getElementById("Outer").style.display = "none";
+		document.getElementById("Outer4").style.display = "none";
+		document.getElementById("Outer3").style.display = "none";;
+		MSApp.terminateApp();
+	/*	alert('backbutton');*/
+		 }
+
+
+    </script>
+       <title>Zen Quotes App</title>
+</head>
+<body onload="onLoad()"><div id="LogoBoxZindex"><div id="ExitScreen">
+  <p style="font-family:Arial;font-weight:bold;color:#ffffff;font-size:1.6em;">Quit?</p>
+                 <div id="StartButtons">
+ 
+  <button class="ExitButton" onclick="ConfirmExit();">YES</button>
+              </div> 
+               <div id="StartButtons">
+ 
+  <button class="ExitButton" onclick="document.getElementById('LogoBoxZindex').style.visibility = 'hidden';">NO</button>
+              </div> 
+               <div id="StartButtons">
+ 
+ <button class="ExitButton" onclick="window.open('market://details?id=com.kaydownes.GodChristianQuotes', '_self');">RATE APP</button>
+              </div> 
+</div></div>
+<div id="Outer2"><div align="center">
+    <div class="Inner">
+   <!-- test -->  
+    <div align="center"><div id="MainQuote"><div id="LogoBox"><img src="img/ZinYangLogo75x75.png" class="LogoImg"></div>
+     
+        <h1>God / Christian Quotes</h1>  <div class="AboutText">Your daily fix of inspirational God / Christian sayings and affirmations to help you form a closer relationship with God.  </div>
+        
+       <div id="StartButtons">
+        <button class="StartmyButton" onclick="var now = new Date(); var start = new Date(now.getFullYear(), 0, 0); var diff = now - start; var oneDay = 1000 * 60 * 60 * 24; var day = Math.floor(diff / oneDay); document.getElementById('Outer').style.display = 'block'; document.getElementById('Outer2').style.display = 'none';document.getElementById('Outer3').style.display = 'none';document.getElementById('Outer4').style.display = 'none';getElementById('demo2').innerHTML=car[day];document.getElementById('Texty').innerHTML='Today\'s Quote'; todaysDate();">Today's Quote</button>
+
+  
+  <button class="StartmyButton" onclick="document.getElementById('Outer4').style.display = 'block';document.getElementById('Outer3').style.display = 'none';document.getElementById('Outer').style.display = 'none'; document.getElementById('Outer2').style.display = 'none'">About</button>
+
+  
+  <button class="StartmyButton" onclick="select=1;document.getElementById('Outer3').style.display = 'block';document.getElementById('Outer').style.display = 'none';document.getElementById('Outer4').style.display = 'none'; document.getElementById('Outer2').style.display = 'none'">Faith Study</button>
+  
+<!--  <button class="StartmyButton" onclick="Windows.System.Launcher.LaunchUriAsync(new Uri(ms-windows-store://review/?PFN= Microsoft.Office.OneNote_8wekyb3d8bbwe));');">Rate This App</button>-->
+  
+  
+  </div>
+       <blockquote>&nbsp;</blockquote>
+<!-- end QuoteExt --></div><!-- end MainQuote --></div>
+<div align="center">
+  <div id="TheKayCredit"><div class="KayCredit">
+     <!-- <a href="http://www.kaydownes.com" target="_system" style="color: #ffffff;text-decoration:none;">--><a href="#" onclick="window.open('http://www.kaydownes.com/','_system');" style="color: #ffffff;text-decoration:none; text-shadow: 2px 2px 4px #000000;">Designed & Developed by<br>www.kaydownes.com</a></div>
+</div>
+  <p>&nbsp;</p>
+
+<!-- end div centre --></div> 
+<!-- end div ButtonInner -->
+    </div> <!-- end class Inner -->
+    </div> <!-- end class div center -->
+
+</div>
+<div id="Outer">
+<div align="center">
+    <div class="Inner">
+    <div align="center"><div id="MainQuote"><div id="LogoBox"><img src="img/ZinYangLogo75x75.png" class="LogoImg"></div>
+     
+        <h1><div id="Texty"></div></h1>      
+        <div class="QuoteText"><p id="demo2"><p><!--Although you may not always be able to avoid difficult situations, you can modify the extent to which you can suffer by how you choose to respond to the situation.</p>--><!--"It is easy to believe we are each wave and forget we are also
+the ocean."--></div>
+<div class="DateText" id="demo"></div>
+<!-- end QuoteExt --></div><!-- end MainQuote --></div>
+<div align="center">
+  <div id="ButtonInner">
+    <div id="MainQuote2"><button class="myButton" onclick="var now = new Date(); var start = new Date(now.getFullYear(), 0, 0); var diff = now - start; var oneDay = 1000 * 60 * 60 * 24; var day = Math.floor(diff / oneDay ); getElementById('demo2').innerHTML=car[day];document.getElementById('Texty').innerHTML='Today\'s Quote'; todaysDate();">Today's<br>Quote</button>
+    
+    </div>
+    
+    <div id="MainQuote2b"><button class="myButton" onclick="getElementById('demo2').innerHTML=car[+Math.floor((Math.random() * 366) + 1)];document.getElementById('Texty').innerHTML='Random Quote'; todaysDate();">Random<br>Quote</button>
+    </div>
+    
+    <div id="MainQuote2">
+      <button class="myButton2" onclick="select=2;document.getElementById('Outer3').style.display = 'block';document.getElementById('Outer').style.display = 'none';document.getElementById('Outer4').style.display = 'none'; document.getElementById('Outer2').style.display = 'none'">Faith<br>Study</button></div>
+    
+        <div id="MainQuote2b"><button class="myButton2" onclick="document.getElementById('Outer2').style.display = 'block';document.getElementById('Outer').style.display = 'none';document.getElementById('Outer4').style.display = 'none'; document.getElementById('Outer3').style.display = 'none'">&#9664;&#9664;<br>Back</button></div>
+
+</div> <!-- end buttno inner -->
+    
+  <!--  <div id="TheKayCredit"><div class="KayCreditBlack">Designed & Developed by<br>
+     <!-- <a href="http://www.kaydownes.com" target="_blank" style="color: #000000;text-decoration:none;">www.kaydownes.com</a>--><!--<a href="#" onclick="window.open('http://www.kaydownes.com/','_system');" style="color: #000000;text-decoration:none;">www.kaydownes.com</a></div>
+  </div>--> <!-- end div button inner -->
+  
+  <p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+<!-- end div centre --></div> 
+    </div> <!-- end class Inner -->
+    </div> <!-- end class div center -->
+    </div> <!-- end ID outer -->
+
+
+<!-- books page -->
+
+<div id="Outer4">
+<div align="center">
+   <div class="Inner">
+    <div align="center"><div id="MainQuote"><div id="LogoBox"><img src="img/ZinYangLogo75x75.png" class="LogoImg"></div><h1>About</h1>
+          <div class="AboutText">Thankyou for purchasing this app, I hope you enjoy using it.<br>
+            <br>
+          <span style="color: #f1d346;font-weight:bold;"> Updates</span><br>
+            Expansion is planned for this app and updates shall be released as and when ready.<br>
+          </div>
+ 
+             
+          
+  <div class="AboutText"> <br>
+    <br>
+    God / Christian Quotes is 
+    created by<br>
+    <a href="#" onclick="window.open('http://www.kaydownes.com/','_system');" style="color: #ffffff;text-decoration:none;">www.kaydownes.com</a>
+  </div>
+        <table width="96%" border="0" style="padding-top:15px">
+            <tr>
+              <td width="42%"></td>
+              <td width="20%" align="center" valign="middle" style="text-align: center"><div id="LogoBox3"><img onclick="document.getElementById('Outer2').style.display = 'block';document.getElementById('Outer3').style.display = 'none';document.getElementById('Outer4').style.display = 'none'; document.getElementById('Outer').style.display = 'none'" src="img/back-button.png" class="LogoImg2"></div></td>
+              <td width="37%"></td>
+            </tr>
+          </table>
+        <br><br>
+        <!--<p></p>-->
+
+            
+           
+        </div> 
+</div><!-- end MainQuote --></div>
+</div></div>  
+
+<!-- end books page -->
+
+<!-- about page-->
+
+<div id="Outer3">
+<div align="center">
+<div class="InnerScrollBooks">
+   <div class="Inner">
+    
+    <div id="MainQuote">
+    
+   <table width="96%" border="0" style="padding-top:15px">
+  <tr>
+    <td width="20%"><div id="LogoBox2"><img onclick="backFunction();" src="img/ZinYangLogo106.png" class="LogoImg2"><!--<img src="img/ZinYangLogo106.png" class="LogoImg2">--></div></td>
+    <td width="60%" align="center" valign="middle" style="text-align: center"><span class="ReadingTitle">Recommended Reading</span></td>
+    <td width="20%"><div id="LogoBox2"><img onclick="backFunction();" src="img/back-button.png" class="LogoImg2"></div></td>
+  </tr>
+</table>
+            
+        <div id="TheKayCredit">
+          <div class="BookTextTitle"><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/0340733500/ref=as_li_tl?ie=UTF8&camp=1634&creative=6738&creativeASIN=0340733500&linkCode=as2&tag=cyclicalen0b-21" style="color: #f1d346;text-decoration:none; font-weight:bold;">--><a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/0007360657?ie=UTF8&camp=1634&creativeASIN=0007360657&linkCode=xm2&tag=cyclicalen0b-21/','_system');"  style="color: #f1d346;text-decoration:none; font-weight:bold;">Holy Bible: English Standard Version</a></span><br><span class="BookText">An attractive new edition of the English Standard Version of the Bible, the world’s fastest-growing Bible translation. Ideal as a gift or for personal use.<br></span><span class="BookTextLink">
+<!-- <a href="https://www.amazon.co.uk/gp/product/0340733500/ref=as_li_tl?ie=UTF8&camp=1634&creative=6738&creativeASIN=0340733500&linkCode=as2&tag=cyclicalen0b-21" style="color: #f1d346;">Click to visit Store</a>--> <a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/0007360657?ie=UTF8&camp=1634&creativeASIN=0007360657&linkCode=xm2&tag=cyclicalen0b-21/','_system');"  style="color: #f1d346;text-decoration:none;">Click to visit Store</a></span></div>
+
+  <div class="BookTextTitle"><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/0340822538/ref=as_li_tl?ie=UTF8&camp=1634&creative=6738&creativeASIN=0340822538&linkCode=as2&tag=cyclicalen0b-21"_target"_system" style="color: #f1d346;text-decoration:none; font-weight:bold;">Practising The Power Of Now:<BR> Meditations, Exercises and Core Teachings from The Power of Now</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/0768437164?ie=UTF8&camp=1634&creativeASIN=0768437164&linkCode=xm2&tag=cyclicalen0b-21','_system');"  style="color: #f1d346;text-decoration:none; font-weight:bold;">God Is Good: He's Better Than You Think</a>
+<br>
+  </span><span class="BookText">God is better than we think 
+so it's time to change the way we think about Him. 
+God is Good. More than a positive thought, theological concept, or Biblical statement what you do with these three words defines your reality and determines your destiny. Build your life on the solid foundation of God s goodness and experience new realms of supernatural thinking that bring Heaven to Earth, changing the atmosphere around you!<br></span><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/0340822538/ref=as_li_tl?ie=UTF8&camp=1634&creative=6738&creativeASIN=0340822538&linkCode=as2&tag=cyclicalen0b-21" style="color: #f1d346;">Click to visit Store</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/0768437164?ie=UTF8&camp=1634&creativeASIN=0768437164&linkCode=xm2&tag=cyclicalen0b-21','_system');"  style="color: #f1d346;text-decoration:none;">Click to visit Store</a>
+</span></div>
+
+  <div class="BookTextTitle"><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/0140195963/ref=as_li_tl?ie=UTF8&camp=1634&creative=6738&creativeASIN=0140195963&linkCode=as2&tag=cyclicalen0b-21" style="color: #f1d346;text-decoration:none; font-weight:bold;">Buddhism Plain and Simple (Arkana)</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/1942306571?ie=UTF8&camp=1634&creativeASIN=1942306571&linkCode=xm2&tag=cyclicalen0b-21/','_system');"  style="color: #f1d346;text-decoration:none; font-weight:bold;">Growing Up with God: 
+Everyday Adventures of Hearing God's Voice </a>  
+</span><br>
+<span class="BookText">Growing Up with God is the story of Maria and Lucas, two best friends who are on the journey of discovering themselves in the very normal, but also epic journey of hearing from God's heart.Maria has a life-changing moment at Summer Camp when she hears from God for the first time...<br></span><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/0140195963/ref=as_li_tl?ie=UTF8&camp=1634&creative=6738&creativeASIN=0140195963&linkCode=as2&tag=cyclicalen0b-21" style="color: #f1d346;">Click to visit Store</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/1942306571?ie=UTF8&camp=1634&creativeASIN=1942306571&linkCode=xm2&tag=cyclicalen0b-21','_system');"  style="color: #f1d346;text-decoration:none;">Click to visit Store</a></span></div>
+
+  <div class="BookTextTitle"><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/0340750154/ref=as_li_tl?ie=UTF8&camp=1634&creative=6738&creativeASIN=0340750154&linkCode=as2&tag=cyclicalen0b-21" style="color: #f1d346;text-decoration:none; font-weight:bold;">The Art of Happiness: A Handbook for Living</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/0764544829?ie=UTF8&camp=1634&creativeASIN=0764544829&linkCode=xm2&tag=cyclicalen0b-21/','_system');"  style="color: #f1d346;text-decoration:none; font-weight:bold;">Christianity For Dummies</a>  
+</span><br><span class="BookText">Curious about Christianity? This friendly guide helps you understand the basic teachings of the Christian faith, exploring the common ground that all Christians share, the differences among the major branches, the key events in Christian history, the key theological issues, and the many ways Christians live out their faith in today′s world. <br></span><span class="BookTextLink">
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/0764544829?ie=UTF8&camp=1634&creativeASIN=0764544829&linkCode=xm2&tag=cyclicalen0b-21/','_system');"  style="color: #f1d346;text-decoration:none;">Click to visit Store</a>
+<!--<a href="https://www.amazon.co.uk/gp/product/0340750154/ref=as_li_tl?ie=UTF8&camp=1634&creative=6738&creativeASIN=0340750154&linkCode=as2&tag=cyclicalen0b-21" style="color: #f1d346;">Click to visit Store</a>-->
+</span></div>
+
+  <div class="BookTextTitle"><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/1503322610?ie=UTF8&camp=1634&creativeASIN=1503322610&linkCode=xm2&tag=cyclicalen0b-21" style="color: #f1d346;text-decoration:none; font-weight:bold;">Zen: Beginner's Guide: Happy, Peaceful and Focused Lifestyle for Everyone (Buddhism, Meditation, Mindfulness, Success) (Positive Psychology Coaching Series Book 7)</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/0141021896?ie=UTF8&camp=1634&creativeASIN=0141021896&linkCode=xm2&tag=cyclicalen0b-21/','_system');"  style="color: #f1d346;text-decoration:none; font-weight:bold;">A History of Christianity: The First Three Thousand Years</a></span><br><span class="BookText">How did an obscure personality cult come to be the world's biggest religion, with a third of humanity its followers? This book, now the most comprehensive and up to date single volume work in English, describes not only the main facts, ideas and personalities of Christian history, its organization and spirituality, but how it has changed politics, sex, and human society.<br></span><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/1503322610?ie=UTF8&camp=1634&creativeASIN=1503322610&linkCode=xm2&tag=cyclicalen0b-21" style="color: #f1d346;">Click to visit Store</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/0141021896?ie=UTF8&camp=1634&creativeASIN=0141021896&linkCode=xm2&tag=cyclicalen0b-21/','_system');"  style="color: #f1d346;text-decoration:none;">Click to visit Store</a></span></div>
+
+  <div class="BookTextTitle"><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/1590302834?ie=UTF8&camp=1634&creativeASIN=1590302834&linkCode=xm2&tag=cyclicalen0b-21" style="color: #f1d346;text-decoration:none; font-weight:bold;">ZEN Training: Methods and Philosophy (Shambhala Classics)</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/1523461195?ie=UTF8&camp=1634&creativeASIN=1523461195&linkCode=xm2&tag=cyclicalen0b-21/','_system');"  style="color: #f1d346;text-decoration:none; font-weight:bold;">365 Days of Prayer for Christian that Bring Calm & Peace</a>
+  </span><br><span class="BookText">With this magnificent collection of 365 powerful prayers, Oliver Powell helps you complete the three steps of the creative process: Ask, Believe and Receive. You ask your Lord everyday through a positive emotional prayer, and during the whole day, your mind dwells in the belief that your prayer would be accepted. And finally you receive what you have asked for as you make it your habit to be in constant touch with your God for just less than five minutes (in case you a super-busy person). As the Bible says, “…whatever you ask for in prayer, believe that you have received it, and it will be yours” Amen! <br></span><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/1590302834?ie=UTF8&camp=1634&creativeASIN=1590302834&linkCode=xm2&tag=cyclicalen0b-21" style="color: #f1d346;">Click to visit Store</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/1523461195?ie=UTF8&camp=1634&creativeASIN=1523461195&linkCode=xm2&tag=cyclicalen0b-21/','_system');"  style="color: #f1d346;text-decoration:none;">Click to visit Store</a></span></div>
+
+  <div class="BookTextTitle"><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/0804832471?ie=UTF8&camp=1634&creativeASIN=0804832471&linkCode=xm2&tag=cyclicalen0b-21" style="color: #f1d346;text-decoration:none; font-weight:bold;">An Introduction to Zen Training: Sanzen Nyumon</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/143212191X?ie=UTF8&camp=1634&creativeASIN=143212191X&linkCode=xm2&tag=cyclicalen0b-21/','_system');"  style="color: #f1d346;text-decoration:none; font-weight:bold;">Promises from God for Women</a>
+</span><br><span class="BookText">Fluid florals frame the covers of this rich spiritual resource for women! Slender profile, padded front cover and gilt-edged pages lend distinction to the appearance. Inside, promises from Scripture are organized alphabetically to speak to a woman's needs Blessings, Wisdom, Disappointment, Temptation, Gratitude. Interspersed throughout, compelling quotations from notable individuals Kay Arthur, Charles Swindoll, Mother Teresa, Billy Graham, Martin Luther King, Jr.encourage and inspire women on their daily walk.<br></span><span class="BookTextLink">
+
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/143212191X?ie=UTF8&camp=1634&creativeASIN=143212191X&linkCode=xm2&tag=cyclicalen0b-21/','_system');"  style="color: #f1d346;text-decoration:none;">Click to visit Store</a><!--<a href="https://www.amazon.co.uk/gp/product/0804832471?ie=UTF8&camp=1634&creativeASIN=0804832471&linkCode=xm2&tag=cyclicalen0b-21" style="color: #f1d346;">Click to visit Store</a>--></span></div>
+
+  <div class="BookTextTitle"><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/1570629528?ie=UTF8&camp=1634&creativeASIN=1570629528&linkCode=xm2&tag=cyclicalen0b-21" style="color: #f1d346;text-decoration:none; font-weight:bold;">The Eight Gates of Zen: A Program of Zen Training</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/0199557608?ie=UTF8&camp=1634&creativeASIN=0199557608&linkCode=xm2&tag=cyclicalen0b-21/','_system');"  style="color: #f1d346;text-decoration:none; font-weight:bold;">King James Bible: 400th Anniversary Edition</a>  
+</span><br><span class="BookText">This 400th anniversary edition of the King James Version of the Bible is a reprint of the 1611 text, in an easy-to-read roman font instead of the black-letter type of the original. The original capital letters, many of which are pictoral, have been restored to each chapter in order to replicate the visual appeal of the early editions. <br></span><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/1570629528?ie=UTF8&camp=1634&creativeASIN=1570629528&linkCode=xm2&tag=cyclicalen0b-21" style="color: #f1d346;">Click to visit Store</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/0199557608?ie=UTF8&camp=1634&creativeASIN=0199557608&linkCode=xm2&tag=cyclicalen0b-21/','_system');"  style="color: #f1d346;text-decoration:none;">Click to visit Store</a>
+</span></div>
+  
+  <div class="BookTextTitle"><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/1844135683?ie=UTF8&camp=1634&creativeASIN=1844135683&linkCode=xm2&tag=cyclicalen0b-21" style="color: #f1d346;text-decoration:none; font-weight:bold;">The Buddha, Geoff and Me: A Modern Story </a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/1622453522?ie=UTF8&camp=1634&creativeASIN=1622453522&linkCode=xm2&tag=cyclicalen0b-21/','_system');"  style="color: #f1d346;text-decoration:none; font-weight:bold;">How to Raise Children for Christ: A Guide for Excellent Christian Parenting </a>  
+</span><br><span class="BookText">This book is different from most books on raising children. It is a plea for the parents to truly know and walk with God – for them to love God and His Word. In the correct order, focusing first on the parents, Andrew Murray then urges parents to sincerely and consistently love their children and in all tenderness and gentleness teach them as God also teaches us. <br></span><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/1844135683?ie=UTF8&camp=1634&creativeASIN=1844135683&linkCode=xm2&tag=cyclicalen0b-21" style="color: #f1d346;">Click to visit Store</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/1622453522?ie=UTF8&camp=1634&creativeASIN=1622453522&linkCode=xm2&tag=cyclicalen0b-21/','_system');"  style="color: #f1d346;text-decoration:none;">Click to visit Store</a>
+</span></div>
+  
+  <div class="BookTextTitle"><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/1846044294?ie=UTF8&camp=1634&creativeASIN=1846044294&linkCode=xm2&tag=cyclicalen0b-21" style="color: #f1d346;text-decoration:none; font-weight:bold;">Bodhisattva Blues</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/0281077428?ie=UTF8&camp=1634&creativeASIN=0281077428&linkCode=xm2&tag=cyclicalen0b-21/','_system');"  style="color: #f1d346;text-decoration:none; font-weight:bold;">God Created Humanism: The Christian Basis of Secular Valuess</a>  
+</span><br><span class="BookText">In this compelling account of the origins and evolution of our secular worldview, Theo Hobson shows how Christian values continue to underpin our public morality, how faith remains indispensable to Western humanism, and how atheistic humanism represents a dead end. At the same time, he offers a timely warning against the dangers of a religious-secular culture war, given the radically politicized and destructive forms of religion endemic in the world today.<br></span><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/1846044294?ie=UTF8&camp=1634&creativeASIN=1846044294&linkCode=xm2&tag=cyclicalen0b-21" style="color: #f1d346;">Click to visit Store</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/0281077428?ie=UTF8&camp=1634&creativeASIN=0281077428&linkCode=xm2&tag=cyclicalen0b-21/','_system');"  style="color: #f1d346;text-decoration:none;">Click to visit Store</a>
+</span></div>
+  
+  <div class="BookTextTitle"><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/1590302915?ie=UTF8&camp=1634&creativeASIN=1590302915&linkCode=xm2&tag=cyclicalen0b-21" style="color: #f1d346;text-decoration:none; font-weight:bold;">How to Cook Your Life: From the ZEN Kitchen to Enlightenment</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/0281074860?ie=UTF8&camp=1634&creativeASIN=0281074860&linkCode=xm2&tag=cyclicalen0b-21/','_system');"  style="color: #f1d346;text-decoration:none; font-weight:bold;">Mindfulness and Christian Spirituality: Making Space for God </a>  
+</span><br><span class="BookText">We can all engage with such longings and wish these good things for the people we love. Mindfulness practice is hugely popular these days! But what, Tim Stead asks, does it have to offer Christianity? How might it help us to transform the way we manage stress and open up more completely to the promised life in all its fullness? <br></span><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/1590302915?ie=UTF8&camp=1634&creativeASIN=1590302915&linkCode=xm2&tag=cyclicalen0b-21" style="color: #f1d346;">Click to visit Store</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/0281074860?ie=UTF8&camp=1634&creativeASIN=0281074860&linkCode=xm2&tag=cyclicalen0b-21/','_system');"  style="color: #f1d346;text-decoration:none;">Click to visit Store</a></span></div>
+  
+  <div class="BookTextTitle"><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/0877734313?ie=UTF8&camp=1634&creativeASIN=0877734313&linkCode=xm2&tag=cyclicalen0b-21" style="color: #f1d346;text-decoration:none; font-weight:bold;">Returning to Silence: Zen Practice in Everyday Life</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/1942306199?ie=UTF8&camp=1634&creativeASIN=1942306199&linkCode=xm2&tag=cyclicalen0b-21/','_system');"  style="color: #f1d346;text-decoration:none; font-weight:bold;">Translating God: Hearing God's Voice for Yourself and the World Around You</a>  
+</span><br><span class="BookText">Translating God serves as an inspirational guide book that puts God s great love back into prophetic ministry as a primary goalfull of real life stories that articulate the culture of love behind God's heart for the prophetic.<br></span><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/0877734313?ie=UTF8&camp=1634&creativeASIN=0877734313&linkCode=xm2&tag=cyclicalen0b-21" style="color: #f1d346;">Click to visit Store</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/1942306199?ie=UTF8&camp=1634&creativeASIN=1942306199&linkCode=xm2&tag=cyclicalen0b-21/','_system');"  style="color: #f1d346;text-decoration:none;">Click to visit Store</a>
+</span></div>
+  
+  <div class="BookTextTitle"><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/111802379X?ie=UTF8&camp=1634&creativeASIN=111802379X&linkCode=xm2&tag=cyclicalen0b-21" style="color: #f1d346;text-decoration:none; font-weight:bold;">Buddhism For Dummies</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/0340693258?ie=UTF8&camp=1634&creativeASIN=0340693258&linkCode=xm2&tag=cyclicalen0b-21/','_system');"  style="color: #f1d346;text-decoration:none; font-weight:bold;">Conversations with God, Book 1: An Uncommon Dialogue</a>  
+</span><br><span class="BookText">Neal Donald Walsch was experiencing a low period in his life when he decided to write a letter to God, venting his frustrations. What he did not expect was a response. As he finished his letter, he was moved to continue writing - and out came extraordinary answers to his questions. This work presents the answers that Walsch received, helping him to change himself, his life and the way he viewed other beings.<br></span><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/111802379X?ie=UTF8&camp=1634&creativeASIN=111802379X&linkCode=xm2&tag=cyclicalen0b-21" style="color: #f1d346;">Click to visit Store</a>--><a href="#" onclick="https://www.amazon.co.uk/gp/product/0340693258?ie=UTF8&camp=1634&creativeASIN=0340693258&linkCode=xm2&tag=cyclicalen0b-21/','_system');"  style="color: #f1d346;text-decoration:none;">Click to visit Store</a></span></div>
+  
+  <div class="BookTextTitle"><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/1846041058?ie=UTF8&camp=1634&creativeASIN=1846041058&linkCode=xm2&tag=cyclicalen0b-21" style="color: #f1d346;text-decoration:none; font-weight:bold;">The Tibetan Book Of Living And Dying: A Spiritual Classic from One of the Foremost Interpreters of Tibetan Buddhism to the West </a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/034053642X?ie=UTF8&camp=1634&creativeASIN=034053642X&linkCode=xm2&tag=cyclicalen0b-21/','_system');"  style="color: #f1d346;text-decoration:none; font-weight:bold;">My Dear Child: Listening to God's Heart</a>  
+</span><br><span class="BookText">These inspired meditations reveal the true heart of God's love for us, and will help us understand some of the deeper mysteries of his nature.Says Colin Urquhart: 'The Lord wanted to open his heart to me about himself, revealing several aspects of his nature - not only about love, grace and mercy, but also about wrath, justice and judgement. I now have a greater understanding of who God is and the nature of his love for each of his children. Through this book I believe many will experience God speaking to their hearts concerning issues which are of deep and immediate concern to them.'<br></span><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/1846041058?ie=UTF8&camp=1634&creativeASIN=1846041058&linkCode=xm2&tag=cyclicalen0b-21" style="color: #f1d346;">Click to visit Store</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/034053642X?ie=UTF8&camp=1634&creativeASIN=034053642X&linkCode=xm2&tag=cyclicalen0b-21/','_system');"  style="color: #f1d346;text-decoration:none;">Click to visit Store</a>
+</span></div>
+  
+  <div class="BookTextTitle"><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/1400080797?ie=UTF8&camp=1634&creativeASIN=1400080797&linkCode=xm2&tag=cyclicalen0b-21" style="color: #f1d346;text-decoration:none; font-weight:bold;">The Quantum and the Lotus: A Journey to the Frontiers Where Science and Buddhism Meet</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/1629118362?ie=UTF8&camp=1634&creativeASIN=1629118362&linkCode=xm2&tag=cyclicalen0b-21/','_system');"  style="color: #f1d346;text-decoration:none; font-weight:bold;">A Christian's Secret of a Happy Life</a>  
+</span><br>
+  <span class="BookText">This inspiring message from beloved author Hannah Whitall Smith reveals the profound secrets of a happy and successful life.<br></span><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/1400080797?ie=UTF8&camp=1634&creativeASIN=1400080797&linkCode=xm2&tag=cyclicalen0b-21" style="color: #f1d346;">Click to visit Store</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/1629118362?ie=UTF8&camp=1634&creativeASIN=1629118362&linkCode=xm2&tag=cyclicalen0b-21/','_system');"  style="color: #f1d346;text-decoration:none;">Click to visit Store</a>
+</span>  
+</span></div>
+  
+  <div class="BookTextTitle"><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/1608683885?ie=UTF8&camp=1634&creativeASIN=1608683885&linkCode=xm2&tag=cyclicalen0b-21" style="color: #f1d346;text-decoration:none; font-weight:bold;">Don't Be a Jerk: And Other Practical Advice from Dogen, Japan's Greatest Zen Master </a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/076840844X?ie=UTF8&camp=1634&creativeASIN=076840844X&linkCode=xm2&tag=cyclicalen0b-21/','_system');"  style="color: #f1d346;text-decoration:none; font-weight:bold;">Living with Purpose: Devotions for Discovering Your God-Given Potential</a>  
+</span><br><span class="BookText">Every human being was formed in the image and likeness of the Creator a God of purpose and destiny. In turn, it is Heaven s perfect plan for you to maximize your life, fulfill your destiny and live with a sense of divine purpose! 
+In the "Living With Purpose" devotional, you will receive access to Biblical wisdom and spiritual insights that will help you face your day with increased vision and live your life with a greater sense of destiny.<br></span><span class="BookTextLink"><!--"https://www.amazon.co.uk/gp/product/1608683885?ie=UTF8&camp=1634&creativeASIN=1608683885&linkCode=xm2&tag=cyclicalen0b-21" style="color: #f1d346;">Click to visit Store</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/076840844X?ie=UTF8&camp=1634&creativeASIN=076840844X&linkCode=xm2&tag=cyclicalen0b-21/','_system');"  style="color: #f1d346;text-decoration:none;">Click to visit Store</a>
+</span></div>
+  
+  <div class="BookTextTitle"><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/0385527071?ie=UTF8&camp=1634&creativeASIN=0385527071&linkCode=xm2&tag=cyclicalen0b-21" style="color: #f1d346;text-decoration:none; font-weight:bold;">Confession of a Buddhist Atheist</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/1848258453?ie=UTF8&camp=1634&creativeASIN=1848258453&linkCode=xm2&tag=cyclicalen0b-21/','_system');"  style="color: #f1d346;text-decoration:none; font-weight:bold;">How to be a Mindful Christian: 40 simple spiritual practices</a>  
+</span><br><span class="BookText">This introduction to Christian mindfulness offers a practical guide to mindfulness as a way of Christian living. 
+It brings together the popular practice of mindfulness and the Christian spiritual disciplines such as prayer and contemplation. The result is a pocket spiritual companion that will deepen awareness of the sacred in daily life and of the presence of God moment by moment.<br></span><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/0385527071?ie=UTF8&camp=1634&creativeASIN=0385527071&linkCode=xm2&tag=cyclicalen0b-21" style="color: #f1d346;">Click to visit Store</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/0281076626?ie=UTF8&camp=1634&creativeASIN=0281076626&linkCode=xm2&tag=cyclicalen0b-21/','_system');"  style="color: #f1d346;text-decoration:none;">Click to visit Store</a>
+</span></div>
+  
+  <div class="BookTextTitle"><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/030020518X?ie=UTF8&camp=1634&creativeASIN=030020518X&linkCode=xm2&tag=cyclicalen0b-21" style="color: #f1d346;text-decoration:none; font-weight:bold;">After Buddhism: Rethinking the Dharma for a Secular Age</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/0281076626?ie=UTF8&camp=1634&creativeASIN=0281076626&linkCode=xm2&tag=cyclicalen0b-21','_system');"  style="color: #f1d346;text-decoration:none; font-weight:bold;">Being Disciples: Essentials of the Christian life</a>  
+</span><br><span class="BookText">This fresh and inspiring look at the meaning of discipleship covers the essentials of the Christian life, including: faith, hope and love; forgiveness; holiness; social action; life in the Spirit. Written by one of our greatest living theologians, this book will help you to see more clearly, love more dearly and follow more nearly the way of Jesus Christ. Highly accessible, for people of all ages and backgrounds. Designed for use by individuals or groups, with questions for reflection or discussion at the end of each chapter.<br></span><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/030020518X?ie=UTF8&camp=1634&creativeASIN=030020518X&linkCode=xm2&tag=cyclicalen0b-21" style="color: #f1d346;">Click to visit Store</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/0281076626?ie=UTF8&camp=1634&creativeASIN=0281076626&linkCode=xm2&tag=cyclicalen0b-21/','_system');"  style="color: #f1d346;text-decoration:none;">Click to visit Store</a>
+</span></div>
+
+  <div class="BookTextTitle"><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/0990847705?ie=UTF8&camp=1634&creativeASIN=0990847705&linkCode=xm2&tag=cyclicalen0b-21" style="color: #f1d346;text-decoration:none; font-weight:bold;">The Mind Illuminated: A Complete Meditation Guide Integrating Buddhist Wisdom and Brain Science</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/0281071713?ie=UTF8&camp=1634&creativeASIN=0281071713&linkCode=xm2&tag=cyclicalen0b-21/','_system');"  style="color: #f1d346;text-decoration:none; font-weight:bold;">Being Christian</a>  
+</span><br><span class="BookText">"Full of sensitive pastoral advice and shot through with arresting and illuminating theological insights, Rowan Williams’ new book explores the meaning and practice of four essential components of the Christian life: baptism, Bible, Eucharist and prayer.
+
+This book is an invitation to everyone to think through the essentials of the faith and how to live it, making it an ideal gift for anyone at the start of their spiritual journey or thinking about confirmation.<br></span><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/0990847705?ie=UTF8&camp=1634&creativeASIN=0990847705&linkCode=xm2&tag=cyclicalen0b-21" style="color: #f1d346;">Click to visit Store</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/0281071713?ie=UTF8&camp=1634&creativeASIN=0281071713&linkCode=xm2&tag=cyclicalen0b-21/','_system');"  style="color: #f1d346;text-decoration:none;">Click to visit Store</a>
+</span></div>
+  
+          <p><!-- end MainQuote --></p>
+          <p>&nbsp;</p>
+          <table width="96%" border="0" style="padding-top:15px">
+            <tr>
+              <td width="43%"></td>
+              <td width="20%" align="center" valign="middle" style="text-align: center"><div id="LogoBox3"><img onclick="backFunction();" src="img/back-button.png" class="LogoImg2"></div></td>
+              <td width="37%"></td>
+            </tr>
+          </table><p>&nbsp;</p><p>&nbsp;</p>
+        </div>
+    </div>
+   </div></div>
+</div></div></div>
+</div></div> 
+    <script>
+var d = new Date();
+document.getElementById("demo").innerHTML = d.toDateString();
+</script>
+<script type="text/javascript" src="cordova.js"></script>
+<!-- end about page -->
+
+</body>
+
+</html>
